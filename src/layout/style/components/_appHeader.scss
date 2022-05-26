@@ -1,0 +1,92 @@
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 2rem 7rem;
+  z-index: 1;
+}
+header.active {
+  transform: translateX(-400px);
+}
+header .logo {
+  position: relative;
+  min-width: 100px;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  gap: 4rem;
+}
+.burger {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.burger::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+}
+
+.burger::after {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+}
+
+header.active .burger::after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+header.active .burger::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%) rotate(-45deg);
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  right: -200px;
+  width: 400px;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  transition: 0.3s;
+  opacity: 0;
+
+  &.active {
+    right: 0;
+    z-index: 2;
+    opacity: 1;
+    background: $bg-secondary-50;
+  }
+  ul {
+    display: grid;
+    gap: 2rem;
+  }
+  li a {
+    color: $color-secondary;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &:hover{
+      color: $color-accent;
+    }
+  }
+}
