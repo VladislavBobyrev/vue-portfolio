@@ -1,15 +1,24 @@
 <template>
-<header class="active">
+<header :class="[burgerIsActive ? 'active' : null]">
     <a href="#" class="logo">logo</a>
-    <div class="burger"></div>
+    <div class="burger" @click="burgerIsActive = !burgerIsActive"></div>
 </header>
-<app-navigation/>
+<app-navigation :burgerIsActive='burgerIsActive'/>
 </template>
 
 <script>
 import AppNavigation from '@/components/navigation/AppNavigation.vue'
+import { ref } from '@vue/reactivity'
 export default {
-  components: {AppNavigation}
+  components: {AppNavigation},
+
+  setup() {
+    const burgerIsActive = ref(false)
+
+    return{
+      burgerIsActive
+    }
+  }
 }
 </script>
 

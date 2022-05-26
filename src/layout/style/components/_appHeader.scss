@@ -8,6 +8,7 @@ header {
   display: flex;
   padding: 2rem 7rem;
   z-index: 1;
+  transition: .3s;
 }
 header.active {
   transform: translateX(-400px);

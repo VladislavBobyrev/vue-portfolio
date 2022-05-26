@@ -8,14 +8,17 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: .3s;
 }
 header.active ~ main {
   transform: translateX(-400px);
 }
 
-.info-box {
+.main-banner {
   max-width: 37rem;
   font-size: 2rem;
+
+
   h2 {
     text-transform: uppercase;
 
@@ -32,10 +35,16 @@ header.active ~ main {
   a {
     padding: 0.5rem 1.5rem;
     border-radius: 40px;
-    background: #000;
+    background: $bg-primary;
+    color: $color-secondary;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
+
+    &:hover{
+      color:$color-secondary;
+      background:$bg-accent;
+    }
   }
 }
 

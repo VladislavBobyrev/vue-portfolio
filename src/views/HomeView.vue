@@ -1,5 +1,5 @@
 <template>
-  <div class="info-box">
+  <div class="main-banner">
     <h2>Title  javascript all a <span>Likes</span></h2>
     <p>lorem5 orem5 lorem5 v Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aspernatur!</p>
     <a href="#">View all projects</a>
