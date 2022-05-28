@@ -9,6 +9,7 @@
 // Links
 a {
   text-decoration: none;
+  color: currentColor;
   &:active,
   &:hover {
     outline: 0;

@@ -1,9 +1,65 @@
-.thumb-theme{
-  position: absolute;
-  top: 2rem;
+.navigation {
+  position: fixed;
+  top: 0;
+  right: -200px;
+  width: 400px;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  transition: 0.3s;
+  opacity: 0;
 
-  li svg{
+  &.active {
+    right: 0;
+    z-index: 2;
+    opacity: 1;
+    background: $bg-basic;
+  }
+  .pages {
+    display: grid;
+    gap: 2rem;
+  }
+  li a {
+    color: $color-secondary;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.thumb {
+  position: absolute;
+  height: fit-content;
+  left: 50%;
+  bottom: 4rem;
+  display: flex;
+  transform: translate(-50%, 0%);
+  gap: 1rem;
+
+
+  li {
+    transition: 0.3s;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #fff;
     width: 2rem;
     height: 2rem;
+    filter: none;
+    box-shadow:0px 0px 8px -3px $bg-accent,
+    0px 0px 8px -3px $bg-accent,
+    0px 0px 8px -3px $bg-accent,
+    0px 0px 8px -3px $bg-accent;
+
+    &:nth-child(2){
+      background: #000;
+    }
+
+    &:hover {
+      box-shadow:0px 0px 18px -3px $bg-secondary-50;
+    }
   }
 }

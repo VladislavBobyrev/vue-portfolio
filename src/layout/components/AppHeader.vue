@@ -1,6 +1,6 @@
 <template>
 <header :class="[burgerIsActive ? 'active' : null]">
-    <a href="#" class="logo">logo</a>
+    <a href="#" class="logo"><span>MR. BOBYREV</span></a>
     <div class="burger" @click="burgerIsActive = !burgerIsActive"></div>
 </header>
 <app-navigation :burgerIsActive='burgerIsActive'/>
@@ -14,7 +14,6 @@ export default {
 
   setup() {
     const burgerIsActive = ref(false)
-
     return{
       burgerIsActive
     }
