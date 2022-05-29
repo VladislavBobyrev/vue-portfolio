@@ -1,0 +1,31 @@
+.about{
+  .circle{
+    transform: skew(127deg) rotate(327deg);
+    opacity: 0.2;
+  }
+
+  & *:not(.circle){
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(3deg);
+  }
+}
+.about-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+.experience {
+  .card {
+    display: flex;
+    background: $bg-secondary-50;
+    color: $bg-secondary;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 1rem;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}

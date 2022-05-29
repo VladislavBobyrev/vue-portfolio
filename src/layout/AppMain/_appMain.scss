@@ -1,0 +1,161 @@
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh);
+  padding: 7rem 7rem 2rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+header.active ~ main {
+  transform: translateX(-400px);
+}
+
+.main-banner {
+  max-width: 37rem;
+  font-size: 2rem;
+  letter-spacing: 4px;
+
+  span {
+    font-size: 4rem;
+  }
+  p {
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}
+
+.img-box {
+  width: 600px;
+  height: 200px;
+  margin: 1rem 4rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  img {
+    position: absolute;
+    max-width: 200px;
+  }
+
+  .img-left {
+    perspective-origin: left center;
+    clip-path: polygon(0 0, 51% 0, 51% 100%, 0 100%);
+    animation: l-img 2s ease-in-out infinite;
+    animation-direction: alternate;
+  }
+  .img-right {
+    perspective-origin: right center;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+    animation: r-img 2s ease-in-out infinite;
+    animation-direction: alternate;
+  }
+}
+
+@keyframes l-img {
+  0% {
+    transform: rotateY(-6deg) scaleX(0.97) translateY(-5px);
+  }
+  100% {
+    transform: rotateY(0) scaleX(1);
+  }
+}
+@keyframes r-img {
+  0% {
+    transform: rotateY(0) scaleX(1) translateY(-5px);
+  }
+  100% {
+    transform: rotateY(6deg) scaleX(0.97);
+  }
+}
+
+.sci {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 2rem;
+  opacity: 0.7;
+  svg {
+    cursor: pointer;
+    color: $color-primary;
+    width: 1.8rem;
+    height: 1.8rem;
+
+    &:hover {
+      color: $bg-accent;
+    }
+  }
+}
+
+.circle {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  transform: translate(-13%);
+  width: 125vw;
+  height: 200vh;
+  filter: url(#wavy) blur(1px);
+
+  opacity: 0.7;
+}
+.circle::before {
+  position: absolute;
+  content: "";
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  border: 10px solid $bg-secondary;
+  border-radius: 50%;
+  box-shadow: 0 0 50px $bg-secondary, inset 0 0 50px $bg-secondary;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0002);
+  animation: animate 5s linear infinite;
+}
+.circle::after {
+  position: absolute;
+  content: "";
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  border: 10px solid $bg-secondary;
+  border-radius: 50%;
+  box-shadow: 0 0 10px $bg-secondary, inset 0 0 20px $bg-secondary;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0002);
+}
+
+@keyframes animate {
+  0% {
+    box-shadow: 0 0 50px #0f0, inset 0 0 50px #0f0;
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    box-shadow: 0 0 60px #0f0, inset 0 0 60px #0f0;
+  }
+  40% {
+    box-shadow: 0 0 40px #0f0, inset 0 0 40px #0f0;
+  }
+  60% {
+    box-shadow: 0 0 80px #0f0, inset 0 0 80px #0f0;
+  }
+  80% {
+    box-shadow: 0 0 100px #0f0, inset 0 0 100px #0f0;
+  }
+  100% {
+    box-shadow: 0 0 50px #0f0, inset 0 0 50px #0f0;
+    filter: hue-rotate(360deg);
+  }
+}
+
+svg {
+  width: 0;
+  height: 0;
+}

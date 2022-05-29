@@ -1,5 +1,5 @@
 <template>
-<aside class="loading d-none">
+<aside class="loading">
     <div class="loader">
       <div class="loader__inner cssload-one"></div>
       <div class="loader__inner cssload-two"></div>

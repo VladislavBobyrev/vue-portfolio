@@ -1,9 +1,18 @@
 <template>
   <nav :class="['navigation', burgerIsActive  ? 'active' : null]">
   <ul class="pages">
-    <li><a href="#">about</a></li>
-    <li><a href="#">projects</a></li>
-    <li><a href="#">new</a></li>    
+    <li>
+      <router-link to="/">home</router-link>
+    </li>
+    <li>
+      <router-link to="/projects">projects</router-link>
+      </li>
+    <li>
+      <router-link to="/news">news</router-link>
+      </li>    
+    <li>
+      <router-link to="/about">about</router-link>
+      </li>
   </ul>
 
   <ul class="thumb" data-text="THEME">
