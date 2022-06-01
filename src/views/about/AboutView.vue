@@ -6,7 +6,7 @@
       <h3 class="sub-title">
          <span >Бобырев Владислав</span>
         <p> 
-          FRONTEND DEVELOPER / VUE / TYPESCRIPT / THREE.JS / AR /
+          изучаю / VUE / TYPESCRIPT / THREE.JS / AR /
         </p>
       </h3>
       

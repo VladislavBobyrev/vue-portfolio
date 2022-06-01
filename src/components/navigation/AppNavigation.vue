@@ -6,10 +6,7 @@
     </li>
     <li>
       <router-link to="/projects">projects</router-link>
-      </li>
-    <li>
-      <router-link to="/news">news</router-link>
-      </li>    
+    </li> 
     <li>
       <router-link to="/about">about</router-link>
       </li>
@@ -23,6 +20,7 @@
 </template>
 
 <script>
+
 export default {
   props: ['burgerIsActive'],
   setup(){
@@ -59,7 +57,7 @@ export default {
     }
 
     return {
-      changeTheme
+      changeTheme,
     }
 }
 

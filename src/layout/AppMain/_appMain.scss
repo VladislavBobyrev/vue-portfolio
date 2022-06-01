@@ -9,7 +9,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: 0.3s;
+  // transition: 0.2s;
 }
 header.active ~ main {
   transform: translateX(-400px);
@@ -33,7 +33,7 @@ header.active ~ main {
 .img-box {
   width: 600px;
   height: 200px;
-  margin: 1rem 4rem;
+  margin: auto 4rem;
   display: flex;
   justify-content: center;
   position: relative;
@@ -158,4 +158,45 @@ header.active ~ main {
 svg {
   width: 0;
   height: 0;
+}
+
+@media (max-width: 992px) {
+  main {
+    padding: 6rem 3rem 1rem 3rem;
+  }
+  .sci {
+    right: 1rem;
+  }
+  .img-box img {
+    left: 10%;
+  }
+}
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .scroll-wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .img-box img {
+    left: 50%;
+    max-width: 150px;
+  }
+  header.active ~ main {
+    transform: translateX(-270px);
+  }
+}
+
+@media (max-width: 540px) {
+  main {
+    padding: 7rem 3rem 1rem 3rem;
+  }
+  .sci {
+    right: 1rem;
+  }
+  .img-box img {
+    max-width: 90px;
+  }
 }

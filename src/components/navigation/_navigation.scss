@@ -6,7 +6,7 @@
   height: 100vh;
   display: grid;
   place-items: center;
-  transition: 0.3s;
+  // transition: 0.2s;
   opacity: 0;
 
   &.active {
@@ -42,7 +42,7 @@
 
 
   li {
-    transition: 0.3s;
+    // transition: 0.2s;
     cursor: pointer;
     border-radius: 50%;
     background: #fff;
@@ -62,4 +62,14 @@
       box-shadow:0px 0px 18px -3px $bg-secondary-50;
     }
   }
+}
+
+@media (max-width: 768px) {
+  .navigation{
+    width: 270px;
+  }
+}
+@media (max-width: 540px) {
+
+
 }
